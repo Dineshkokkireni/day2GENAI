@@ -1,0 +1,153 @@
+HTML:
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Management</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>User Management</h1>
+	<button id="create-user-btn">Create New User</button>
+	<table id="users-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Role</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody id="users-tbody">
+			<!-- users will be listed here -->
+		</tbody>
+	</table>
+
+	<!-- popup for confirmation -->
+	<div id="confirmation-popup" style="display:none;">
+		<h2>Confirmation</h2>
+		<p id="confirmation-message"></p>
+		<button id="confirm-btn">Yes</button>
+		<button id="cancel-btn">No</button>
+	</div>
+
+	<!-- popup for updating user -->
+	<div id="update-user-popup" style="display:none;">
+		<h2>Update User</h2>
+		<form>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email"><br><br>
+			<label for="role">Role:</label>
+			<select id="role" name="role">
+				<option value="admin">Admin</option>
+				<option value="moderator">Moderator</option>
+				<option value="user">User</option>
+			</select><br><br>
+			<button id="update-btn">Update</button>
+		</form>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+```
+CSS (in style.css file):
+```
+body {
+	font-family: Arial, sans-serif;
+	margin: 20px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+}
+
+#confirmation-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#confirmation-message {
+	margin-bottom: 20px;
+}
+
+#update-user-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#update-user-form {
+	max-width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+```
+JavaScript (in script.js file):
+```
+// list all users
+fetch('(link unavailable)')
+	.then(response => response.json())
+	.then(users => {
+		const usersTbody = document.getElementById('users-tbody');
+		users.forEach(user => {
+			const row = document.createElement('tr');
+			const nameCell = document.createElement('td');
+			const emailCell = document.createElement('td');
+			const roleCell = document.createElement('td');
+			const actionsCell = document.createElement('td');
+			
+			nameCell.textContent = user.name;
+			emailCell.textContent = user.email;
+			roleCell.textContent = user.role;
+			
+			const updateBtn = document.createElement('button');
+			updateBtn.textContent = 'Update';
+			updateBtn.addEventListener('click', () => {
+				// update user popup
+				const updateUserPopup = document.getElementById('update-user-popup');
+				updateUserPopup.style.display = 'block';
+				const nameInput = document.getElementById('name');
+				const emailInput = document.getElementById('email');
+				const roleSelect = document.getElementById('role');
+				
+				nameInput.value = user.name;
+				emailInput.value = user.email;
+				roleSelect.value = user.role;
+			});
+			
+			const deleteBtn = document.createElement('button');
+			deleteBtn.textContent = 'Delete';
+			deleteBtn.addEventListener('click', () => {
+				// confirmation popup
+				const confirmationPopup = document.getElementById('confirmation-popup');
+				confirmationPopup.style.display = 'block';
+				const confirmationMessage = document.getElementById('confirmation-message');
+				confirmationMessage.textContent = `
+```
