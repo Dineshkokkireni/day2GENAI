@@ -1,0 +1,131 @@
+
+
+*department.xml*
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<departments>
+  <department>
+    <name>Computer Science</name>
+    <id>1</id>
+  </department>
+  <department>
+    <name>Mathematics</name>
+    <id>2</id>
+  </department>
+  <department>
+    <name>Physics</name>
+    <id>3</id>
+  </department>
+</departments>
+```
+
+*year.xml*
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<years>
+  <year>
+    <name>First Year</name>
+    <id>1</id>
+  </year>
+  <year>
+    <name>Second Year</name>
+    <id>2</id>
+  </year>
+  <year>
+    <name>Third Year</name>
+    <id>3</id>
+  </year>
+</years>
+```
+
+*student.xml*
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <student>
+    <name>John Doe</name>
+    <id>1</id>
+    <department>1</department>
+    <year>1</year>
+  </student>
+  <student>
+    <name>Jane Smith</name>
+    <id>2</id>
+    <department>2</department>
+    <year>2</year>
+  </student>
+  <student>
+    <name>Bob Johnson</name>
+    <id>3</id>
+    <department>3</department>
+    <year>3</year>
+  </student>
+</students>
+```
+
+And here are the equivalent JSON files:
+
+*department.json*
+```
+{
+  "departments": [
+    {
+      "name": "Computer Science",
+      "id": 1
+    },
+    {
+      "name": "Mathematics",
+      "id": 2
+    },
+    {
+      "name": "Physics",
+      "id": 3
+    }
+  ]
+}
+```
+
+*year.json*
+```
+{
+  "years": [
+    {
+      "name": "First Year",
+      "id": 1
+    },
+    {
+      "name": "Second Year",
+      "id": 2
+    },
+    {
+      "name": "Third Year",
+      "id": 3
+    }
+  ]
+}
+```
+
+*student.json*
+```
+{
+  "students": [
+    {
+      "name": "John Doe",
+      "id": 1,
+      "department": 1,
+      "year": 1
+    },
+    {
+      "name": "Jane Smith",
+      "id": 2,
+      "department": 2,
+      "year": 2
+    },
+    {
+      "name": "Bob Johnson",
+      "id": 3,
+      "department": 3,
+      "year": 3
+    }
+  ]
+}
