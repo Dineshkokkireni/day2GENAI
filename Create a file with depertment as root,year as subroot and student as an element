@@ -1,0 +1,40 @@
+
+
+_departments.xml_
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<departments>
+  <department name="Computer Science">
+    <year name="First Year">
+      <student id="1" name="John Doe"/>
+      <student id="2" name="Jane Smith"/>
+    </year>
+    <year name="Second Year">
+      <student id="3" name="Bob Johnson"/>
+      <student id="4" name="Alice Davis"/>
+    </year>
+  </department>
+  <department name="Mathematics">
+    <year name="First Year">
+      <student id="5" name="Mike Brown"/>
+      <student id="6" name="Emily Chen"/>
+    </year>
+    <year name="Third Year">
+      <student id="7" name="Tom White"/>
+      <student id="8" name="Sarah Lee"/>
+    </year>
+  </department>
+  <department name="Physics">
+    <year name="Second Year">
+      <student id="9" name="David Kim"/>
+      <student id="10" name="Hannah Patel"/>
+    </year>
+    <year name="Third Year">
+      <student id="11" name="Kevin Taylor"/>
+      <student id="12" name="Olivia Martin"/>
+    </year>
+  </department>
+</departments>
+```
+
+In this file, the root element is `<departments>`, which contains multiple `<department>` elements. Each `<department>` element has a `name` attribute and contains multiple `<year>` elements. Each `<year>` element has a `name` attribute and contains multiple `<student>` elements. Each `<student>` element has an `id` attribute and a `name` attribute.
